@@ -16,17 +16,17 @@ namespace Web.Api
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
 
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
+
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
+            //app.MapGet("/", () => "Welcome to the default route!");
+            //app.MapControllerRoute(name: "default", pattern: "/", defaults: new { controller = "Home", action = "Index" });
 
             app.MapControllers();
 
