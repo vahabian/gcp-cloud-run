@@ -26,7 +26,8 @@ namespace Web.Api.Controllers
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)],
+                TestValue = DateTime.Now.ToString("F"),
             })
             .ToArray();
         }
