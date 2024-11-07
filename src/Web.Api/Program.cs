@@ -10,11 +10,15 @@ namespace Web.Api
             // Configure Kestrel to use HTTP/2
             builder.WebHost.ConfigureKestrel(options =>
             {
-                // Enable HTTP/2 protocol
-                options.ListenAnyIP(8080, listenOptions =>
+                options.ConfigureEndpointDefaults(listenOptions =>
                 {
-                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2AndHttp3;
+                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
                 });
+                //// Enable HTTP/2 protocol
+                //options.ListenAnyIP(8080, listenOptions =>
+                //{
+                //    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2AndHttp3;
+                //});
             });
 
             // Add services to the container.
