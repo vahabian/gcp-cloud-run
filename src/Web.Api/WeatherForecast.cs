@@ -10,6 +10,6 @@ namespace Web.Api
 
         public string? Summary { get; set; }
 
-        public string? TestValue1 { get; set; }
+        public string? NewUpdate { get; set; }
     }
 }
