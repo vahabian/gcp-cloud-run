@@ -13,7 +13,7 @@ namespace Web.Api
                 // Enable HTTP/2 protocol
                 options.ListenAnyIP(8080, listenOptions =>
                 {
-                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2 | Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1;
+                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2AndHttp3;
                 });
             });
 
